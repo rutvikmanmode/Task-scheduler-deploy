@@ -1,0 +1,33 @@
+/* ReminderPopup.css */
+.reminder-popup {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  z-index: 9999;
+  max-width: 300px;
+}
+
+.reminder-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reminder-content button {
+  padding: 6px 12px;
+  background-color: #ff5757;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reminder-content button:hover {
+  background-color: #ff1c1c;
+}

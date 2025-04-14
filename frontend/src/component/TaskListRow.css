@@ -1,0 +1,175 @@
+tbody tr, tr td , tr td div{
+    transition: 0.23s;
+}
+tbody tr.closed{
+    line-height: 10px; 
+} 
+
+tbody tr td{ 
+    
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+}
+tr.closed td div:not(tr.closed td div:nth-child(1),tr.closed td div:nth-child(2)){
+    display: none;
+}
+tbody tr td div:nth-child(3){
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+tbody tr td .fa-chevron-down {
+    cursor: pointer;
+    position: absolute;
+    top:10px;
+    right: 10px;
+}
+tbody tr td .task_row_header{
+    display: flex;
+
+}
+tbody tr td .fa-calendar-xmark:hover{
+
+    color:#f34340;
+}
+tbody tr td .imgContainer {
+    transition: 0.23s;
+    display: none;
+}
+tbody tr td .fa-image:hover + .imgContainer {
+    display: block;
+}
+.task_row_title{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.task_row_title .fa-diagram-successor{
+    color: #40f0f3;
+}
+.item_row{
+    cursor: grab;
+    background-color: #2b2f33;
+    border: none;
+    transition: 0.23s;
+    
+}
+
+.item_row td:nth-child(2),.item_row td:nth-child(3){
+    text-align: center;
+    width: 10%;
+}
+.item_row td{
+    height: 40px;
+}
+table{
+    width: 100%;
+    border-spacing: 10px;
+}
+.dragging{
+    opacity: 0.3;
+}
+.checking{
+    transition: 0.23s;
+    display: flex;
+    width: 15px;
+    height: 15px;
+    margin: 0 10px;
+    border-radius: 38%;
+    border: 3.5px solid #40cff3;
+    cursor: pointer;
+}
+.checked{
+    background-color: #40d8f3 ;
+}
+.row{
+    transition: 0.23s;
+    display: none;
+}
+.checked .fa-check{
+    display: block;
+}
+
+/* Edit Form Overlay */
+.edit-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures it's on top of other content */
+}
+
+/* Edit Form Container */
+.edit-form {
+    background-color: #1f1e1e;
+    border: 1px solid #1b1a1a;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px; /* Limit max width */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Center the form using flexbox on the overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input Fields */
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #252323;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    color: #fff; /* Set the text color to white */
+    background-color: #333; /* Set background color to a darker shade for contrast */
+}
+
+/* Input Fields for Date and Time */
+.edit-form input[type="date"],
+.edit-form input[type="time"] {
+    width: 48%;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+/* Buttons */
+.edit-form button {
+    background-color: #007bff;
+    color: #1e1b1b;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.edit-form button:hover {
+    background-color: #0056b3;
+}
+
+.edit-form button:focus {
+    outline: none;
+}
+
+/* Cancel Button */
+.edit-form button:last-child {
+    background-color: #dc3545;
+}
+
+.edit-form button:last-child:hover {
+    background-color: #c82333;
+}
