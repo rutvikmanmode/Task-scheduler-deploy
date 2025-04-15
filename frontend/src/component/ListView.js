@@ -43,7 +43,7 @@ export default function ListView() {
     const [completedTasks, setcompletedTasks] = useState();
 
     const getTasks = async () => {
-        const { data } = await axios.get("${process.env.REACT_APP_API_URL}/api/tasks")
+        const { data } = await axios.get("https://task-scheduler-deploy.onrender.com/api/tasks");
         if (data.success === true && data.data.length > 0) {
             const uncompleted = data.data.filter(e => e.completed === false)
                 .map((e, i) => {
@@ -73,7 +73,7 @@ export default function ListView() {
 
     // Fetch task by ID (example usage)
     const getTaskById = async (id) => {
-        const { data } = await axios.get("https://task-scheduler-deploy.onrender.com/api/tasks/${id}");
+        const { data } = await axios.get(`https://task-scheduler-deploy.onrender.com/api/tasks/${id}`);
         if (data.success) {
             console.log("Fetched Task:", data.data);
             // You can now update the UI with this task data
